@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Transfer.Model;
 
 namespace Transfer
 {
@@ -25,6 +26,7 @@ namespace Transfer
         public MainWindow()
         {
             InitializeComponent();
+            _itemDictCtrl.RootModel = new RootModel();
         }
 
         private void _tviDict_Selected(object sender, RoutedEventArgs e)

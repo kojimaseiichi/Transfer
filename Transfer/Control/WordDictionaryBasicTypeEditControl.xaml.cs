@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Transfer.Control
 {
     /// <summary>
-    /// MorphControl.xaml の相互作用ロジック
+    /// WordDictionaryBasicTypeEditControl.xaml の相互作用ロジック
     /// </summary>
-    public partial class MorphControl : UserControl
+    public partial class WordDictionaryBasicTypeEditControl : UserControl
     {
-        public MorphControl()
+        public WordDictionaryBasicTypeEditControl()
         {
             InitializeComponent();
         }

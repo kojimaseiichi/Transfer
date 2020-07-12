@@ -15,29 +15,28 @@ using Transfer.Model;
 namespace Transfer.Control
 {
     /// <summary>
-    /// ItemDictionaryControl.xaml の相互作用ロジック
+    /// MorphControl.xaml の相互作用ロジック
     /// </summary>
-    public partial class ItemDictionaryControl : UserControl
+    public partial class MorphDictionaryControl : UserControl
     {
         private RootModel _rootModel;
-
+        
         public RootModel RootModel
         {
             get { return _rootModel; }
             set
             {
                 _rootModel = value;
-                _wordCtrl.RootModel = _rootModel;
-                _morphCtrl.RootModel = _rootModel;
+                if (_rootModel == null)
+                    this.DataContext = null;
+                else
+                    this.DataContext = _rootModel.MorphDictionary;
             }
         }
 
-        public ItemDictionaryControl()
+        public MorphDictionaryControl()
         {
             InitializeComponent();
-
-            _wordCtrl.RootModel = RootModel;
-            _morphCtrl.RootModel = RootModel;
         }
     }
 }

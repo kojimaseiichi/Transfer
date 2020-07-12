@@ -5,33 +5,32 @@ using System.Text;
 
 namespace Transfer.Model
 {
-    class DictItemModel : BindableBase, IEditableObject
+    public class WordBasicTypeModel : BindableBase, IEditableObject
     {
-        private string _word = "";
-        private string _alpha = "";
+        private uint _length;
 
-        public string Word
-        {
-            get { return _word; }
-            set { SetProperty(ref _word, value); }
-        }
-        public string Alpha
-        {
-            get { return _alpha; }
-            set { SetProperty(ref _alpha, value); }
-        }
+        private uint _scale;
+        private uint _precision;
 
+        private decimal _numericMin;
+        private decimal _numericMax;
+
+        public uint Length
+        {
+            get { return _length; }
+            set { SetProperty(ref _length, value); }
+        }
 
         #region IEditableObject
 
-        private DictItemModel _backupCopy;
+        private WordBasicTypeModel _backupCopy;
         private bool _inEdit;
 
         public void BeginEdit()
         {
             if (_inEdit) return;
             _inEdit = true;
-            _backupCopy = this.MemberwiseClone() as DictItemModel;
+            _backupCopy = this.MemberwiseClone() as WordBasicTypeModel;
         }
 
         public void CancelEdit()

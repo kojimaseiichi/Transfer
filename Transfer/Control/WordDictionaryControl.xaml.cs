@@ -10,15 +10,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Transfer.Model;
 
 namespace Transfer.Control
 {
     /// <summary>
     /// DictionaryControl.xaml の相互作用ロジック
     /// </summary>
-    public partial class DictionaryControl : UserControl
+    public partial class WordDictionaryControl : UserControl
     {
-        public DictionaryControl()
+        private RootModel _rootModel;
+
+        public RootModel RootModel
+        {
+            get { return _rootModel; }
+            set
+            {
+                _rootModel = value;
+                if (_rootModel == null)
+                    this.DataContext = null;
+                else
+                    this.DataContext = _rootModel.WordDictionary;
+            }
+        }
+
+        public WordDictionaryControl()
         {
             InitializeComponent();
         }

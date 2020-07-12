@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Transfer.Model
 {
-    class MorphItemModel : BindableBase
+    public class MorphModel : BindableBase
     {
         private string _morph = "";
         private string _alpha = "";

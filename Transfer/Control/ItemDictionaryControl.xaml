@@ -12,13 +12,13 @@
                 <TabItem.Header>
                     <TextBlock>項目辞書</TextBlock>
                 </TabItem.Header>
-                <local:DictionaryControl x:Name="_dictCtrl"/>
+                <local:WordDictionaryControl x:Name="_wordCtrl"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
                     <TextBlock>形態素辞書</TextBlock>
                 </TabItem.Header>
-                <local:MorphControl x:Name="_morphCtrl"/>
+                <local:MorphDictionaryControl x:Name="_morphCtrl"/>
             </TabItem>
         </TabControl>
     </Grid>
